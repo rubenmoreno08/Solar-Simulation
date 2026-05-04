@@ -1,47 +1,51 @@
-# Solar & Orbital Dynamics Simulation
+# Anàlisi Numèrica: Optimització Fotovoltaica i Dinàmica Celeste
 
-![Language](https://img.shields.io/badge/Language-Python%203.x-blue)
-![Libraries](https://img.shields.io/badge/Libraries-NumPy%20%7C%20Astropy%20%7C%20Plotly-green)
-![Status](https://img.shields.io/badge/Status-Educational-orange)
+![Status](https://img.shields.io/badge/Project-Research-blueviolet)
+![Field](https://img.shields.io/badge/Field-Computational_Physics-red)
+![Location](https://img.shields.io/badge/Focus-Barcelona-yellow)
 
-## Descripció i Objectiu
-
-Aquest projecte simula i visualitza la dinàmica orbital de la Terra i la radiació solar incident en un panell situat a **Barcelona**[cite: 1].
-
-El codi combina mètodes numèrics clàssics amb dades astrofísiques d'alta precisió per estudiar l'eficiència energètica fotovoltaica sota diferents condicions, incloent-hi l'impacte d'ombres orogràfiques[cite: 1].
-
-### Informe Científic
-
-Per veure la base teòrica detallada, el desenvolupament matemàtic i la discussió profunda dels resultats, consulteu el document adjunt:
-**[Llegir l'Informe Complet (PDF)](./Informe.pdf)**[cite: 1]
+Aquest repositori conté una eina computacional dissenyada per avaluar la viabilitat d'instal·lacions solars a Barcelona mitjançant la integració de models físics i mètodes numèrics avançats[cite: 1].
 
 ---
 
-## Desenvolupament Tècnic
+## Eixos del Projecte
 
-### Mètodes Numèrics
-* **Mètode d'Euler**: Implementat per a la integració inicial i l'anàlisi de la propagació de l'error[cite: 1].
-* **Runge-Kutta 4 (RK4)**: Utilitzat per garantir la conservació de l'energia orbital i una precisió superior en la trajectòria[cite: 1].
+### 1. Motor de Simulació Orbital
+Per determinar la posició del Sol amb precisió, hem modelat el sistema Terra-Sol resolent les equacions de Newton[cite: 1]. 
+* **RK4 vs Euler**: S'ha implementat l'algorisme de Runge-Kutta de 4t ordre per garantir la conservació de l'energia del sistema, comparant-ne l'estabilitat respecte al mètode d'Euler[cite: 1].
+* **Adimensionalització**: El codi treballa amb unitats normalitzades per optimitzar el cost computacional i evitar errors d'escala[cite: 1].
 
-### Optimització Energètica
-* **Càlcul de la inclinació òptima**: S'ha determinat que 27.00 graus és l'angle ideal per maximitzar la captació anual a Barcelona[cite: 1].
-* **Simulació d'ombres**: Modelatge de pèrdues per obstacles físics i el relleu de la zona[cite: 1].
+### 2. Geometria de Coordenades Local
+El pas de l'òrbita el·líptica a la placa solar requereix una cadena de transformacions lineals[cite: 1]:
+* **Equatorial a ECEF**: Ajust per la inclinació axial de la Terra[cite: 1].
+* **ECEF a ENU**: Projecció de la posició solar sobre l'horitzó local de Barcelona utilitzant latitud i longitud[cite: 1].
+
+### 3. Model Energètic i Optimització
+Més enllà de la física teòrica, el projecte busca resultats pràctics[cite: 1]:
+* **Llei de Stefan-Boltzmann**: Per calcular la irradiància incident real[cite: 1].
+* **Anàlisi de Tilt**: S'ha programat una iteració per trobar l'angle d'inclinació òptim (27°) que maximitza el rendiment anual[cite: 1].
+* **Relleu i Sombras**: El model preveu l'impacte d'obstacles orogràfics en la captació d'energia[cite: 1].
 
 ---
 
-## Fitxers de Sortida
+## Estructura de Resultats
 
-| Categoria | Descripció |
+| Mòdul | Output Clau |
 | :--- | :--- |
-| **Dinàmica** | Comparativa d'òrbites, conservació de l'energia i anàlisi d'errors[cite: 1]. |
-| **Energia** | Gràfics de generació diària, comparativa de plaques i estudi de *tilt*[cite: 1]. |
-| **Visualització** | Analema solar de Barcelona i simulació 3D interactiva[cite: 1]. |
+| **Física Numèrica** | Anàlisi d'error acumulat i conservació de l'energia orbital[cite: 1]. |
+| **Enginyeria Solar** | Corbes de producció diària i optimització del nombre de panells[cite: 1]. |
+| **Astrometria** | Generació de l'analema solar des de la perspectiva de Barcelona[cite: 1]. |
 
 ---
 
-## Autors
+## Documentació Completa
 
-Projecte desenvolupat per l'equip de Física (UAB):
+Totes les demostracions matemàtiques, l'anàlisi de dades i les conclusions físiques es troben detallades a l'informe tècnic:
+📄 **[Consulteu l'Informe.pdf](./Informe.pdf)**[cite: 1]
+
+---
+
+## Equip de Desenvolupament
 * **Rubén Moreno**[cite: 1]
 * **Joel Sánchez**[cite: 1]
 * **Xavier Montero**[cite: 1]
@@ -49,6 +53,6 @@ Projecte desenvolupat per l'equip de Física (UAB):
 
 ---
 
-## Requeriments
+## Setup
 ```bash
 pip install numpy matplotlib astropy plotly
