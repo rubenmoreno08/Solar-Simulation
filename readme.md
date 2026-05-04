@@ -1,8 +1,9 @@
 # Anàlisi Numèrica: Optimització Fotovoltaica i Dinàmica Celeste
 
+![Status](https://img.shields.io/badge/Project-Research-blueviolet)
 ![Language](https://img.shields.io/badge/Language-Python%203.x-blue)
 ![Libraries](https://img.shields.io/badge/Libraries-NumPy%20%7C%20Astropy%20%7C%20Plotly-green)
-![Course](https://img.shields.io/badge/Course-Mètodes_Numèrics_II-red)
+![Field](https://img.shields.io/badge/Field-Computational_Physics-red)
 
 Aquest repositori conté una eina computacional dissenyada per avaluar la viabilitat d'instal·lacions solars mitjançant la integració de models físics i mètodes numèrics avançats[cite: 1].
 
